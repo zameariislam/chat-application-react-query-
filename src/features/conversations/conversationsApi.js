@@ -10,6 +10,9 @@ export const conversationsApi = apiSlice.injectEndpoints({
                 `/conversations?participants_like=${email}&_sort=timestamp&_order=desc&_page=1&_limit=${process.env.REACT_APP_CONVERSATIONS_PER_PAGE}`,
         }),
 
+
+
+
         getConversation: builder.query({
             query: ({ userEmail, participantEmail }) =>
                 `/conversations?participants_like=${userEmail}-${participantEmail}&&participants_like=${participantEmail}-${userEmail}`,
@@ -94,7 +97,25 @@ export const conversationsApi = apiSlice.injectEndpoints({
                 body: data
 
             }),
+
             async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+
+                // client side  optimistic cashe  update start
+
+                const patchResult1 = dispatch(apiSlice.util.updateQueryData('getConversations',
+                    arg.sender, (draft) => {
+                        const draftConversation = draft.find(c => c?.id == arg?.id)
+
+                        draftConversation.message = arg.data.message
+                        draftConversation.timestamp = arg.data.timestamp
+                        console.log("draft", draftConversation)
+
+
+
+                    }))
+
+
+                // client side  optimistic cashe  update end
                 try {
 
                     const { data } = await queryFulfilled
@@ -128,6 +149,7 @@ export const conversationsApi = apiSlice.injectEndpoints({
                 }
                 catch (err) {
                     console.log(err.message)
+                    patchResult1.undo()
 
                 }
 
