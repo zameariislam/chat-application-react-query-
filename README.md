@@ -1,4 +1,4 @@
-[![Youtube][youtube-shield]][youtube-url]
+<!-- [![Youtube][youtube-shield]][youtube-url]
 [![Facebook][facebook-shield]][facebook-group-url]
 
 <!-- PROJECT LOGO -->
@@ -105,4 +105,4 @@ Please follow the below instructions to run server in your machine:
 [htmlicon-shield]: https://img.icons8.com/external-flaticons-flat-flat-icons/28/undefined/external-html-computer-programming-flaticons-flat-flat-icons.png
 [servericon-shield]: https://img.icons8.com/external-itim2101-flat-itim2101/28/undefined/external-server-network-technology-itim2101-flat-itim2101-2.png
 [rocketicon-shield]: https://img.icons8.com/arcade/30/undefined/experimental-rocket-arcade.png
-[contacticon-shield]: https://img.icons8.com/external-flaticons-lineal-color-flat-icons/28/undefined/external-support-communication-media-flaticons-lineal-color-flat-icons.png
+[contacticon-shield]: https://img.icons8.com/external-flaticons-lineal-color-flat-icons/28/undefined/external-support-communication-media-flaticons-lineal-color-flat-icons.png -->
