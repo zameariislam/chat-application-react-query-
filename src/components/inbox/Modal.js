@@ -5,10 +5,7 @@ import isValidEmail from "../../utils/isValidEmail";
 import Error from '../ui/Error'
 import { useDispatch, useSelector } from "react-redux";
 import { conversationsApi, useAddConversationMutation, useEditConversationMutation } from "../../features/conversations/conversationsApi";
-
-
-
-
+import { useAddMessageMutation } from "../../features/messages/messagesApi";
 
 
 
@@ -27,7 +24,8 @@ export default function Modal({ open, control }) {
     const dispatch = useDispatch()
     const [conversation, setConversation] = useState(undefined)
     const [editConversation, { isSuccess: isEditConversationSuccess }] = useEditConversationMutation()
-    const [addConversation, { isSuccess: isEditAddsationSuccess }] = useAddConversationMutation()
+    const [addConversation, { isSuccess: isAddConversationSuccess }] = useAddConversationMutation()
+    //    const[addMessage,{isSuccess:isAddMessageSuccess}] =useAddMessageMutation()
 
 
 
@@ -51,6 +49,20 @@ export default function Modal({ open, control }) {
         }
 
     }, [participant, loggedInUserEmail, dispatch, to, conversation])
+
+
+
+    useEffect(() => {
+
+        if (isEditConversationSuccess || isAddConversationSuccess) {
+            control()
+
+
+
+        }
+
+
+    }, [isAddConversationSuccess, isEditConversationSuccess])
 
 
 
@@ -97,6 +109,7 @@ export default function Modal({ open, control }) {
 
             editConversation({
                 id: conversation[0]?.id,
+                sender: loggedInUserEmail,
                 data: {
 
                     participants: `${loggedInUserEmail}-${participant[0]?.email}`,
@@ -115,22 +128,26 @@ export default function Modal({ open, control }) {
 
 
 
+
         }
         else {
             // add conversation 
             console.log('addconversation')
             addConversation({
+                sender: loggedInUserEmail,
+                data: {
 
-                participants: `${loggedInUserEmail}-${participant[0]?.email}`,
-                users: [
-                    participant[0],
-                    loggedInUser
+                    participants: `${loggedInUserEmail}-${participant[0]?.email}`,
+                    users: [
+                        participant[0],
+                        loggedInUser
 
 
-                ],
-                message,
-                timestamp: new Date().getTime()
+                    ],
+                    message,
+                    timestamp: new Date().getTime()
 
+                }
             })
 
         }
