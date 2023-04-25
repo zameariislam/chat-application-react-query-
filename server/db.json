@@ -41,47 +41,28 @@
           "id": 6
         }
       ],
-      "message": "hello there",
-      "timestamp": 1682011209754,
+      "message": "do you love  me",
+      "timestamp": 1682410326586,
       "id": 1
     },
     {
-      "participants": "naznin@gmail.com-sumit@learnwithsumit.com",
+      "participants": "sumit@learnwithsumit.com-naznin@gmail.com",
       "users": [
+        {
+          "email": "naznin@gmail.com",
+          "password": "$2a$10$sB/kSbfRdIqeoOgExeRCnOfcaaI6E3ZkGMesIyWoHAgjgUbJNt49q",
+          "name": "naznin",
+          "id": 7
+        },
         {
           "email": "sumit@learnwithsumit.com",
-          "password": "$2a$10$s17vJFWPX/wArcaZRZoCm.bQjNAHUj68JjrVk/cvLSbLtqJ7DVy7a",
           "name": "sumit",
           "id": 6
-        },
-        {
-          "email": "naznin@gmail.com",
-          "name": "naznin",
-          "id": 7
         }
       ],
-      "message": "hello  brother",
-      "timestamp": 1682011958857,
+      "message": "hello there",
+      "timestamp": 1682410413278,
       "id": 2
-    },
-    {
-      "participants": "naznin@gmail.com-test@gmail.com",
-      "users": [
-        {
-          "email": "test@gmail.com",
-          "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-          "name": "test",
-          "id": 9
-        },
-        {
-          "email": "naznin@gmail.com",
-          "name": "naznin",
-          "id": 7
-        }
-      ],
-      "message": "hello hooo",
-      "timestamp": 1682011879684,
-      "id": 3
     }
   ],
   "messages": [
@@ -98,31 +79,59 @@
         "name": "test",
         "id": 9
       },
-      "message": "hello",
-      "timestamp": 1682008429636,
+      "message": "hello there",
+      "timestamp": 1682410235648,
       "id": 1
     },
     {
-      "id": 2
-    },
-    {
-      "conversationId": 2,
+      "conversationId": 1,
       "sender": {
         "email": "sumit@learnwithsumit.com",
         "name": "sumit",
         "id": 6
       },
       "receiver": {
-        "email": "naznin@gmail.com",
-        "password": "$2a$10$sB/kSbfRdIqeoOgExeRCnOfcaaI6E3ZkGMesIyWoHAgjgUbJNt49q",
-        "name": "naznin",
-        "id": 7
+        "email": "test@gmail.com",
+        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
+        "name": "test",
+        "id": 9
       },
-      "message": "hello naznin",
-      "timestamp": 1682008567503,
+      "message": "hello thereeee",
+      "timestamp": 1682410299704,
+      "id": 2
+    },
+    {
+      "conversationId": 1,
+      "sender": {
+        "email": "sumit@learnwithsumit.com",
+        "name": "sumit",
+        "id": 6
+      },
+      "receiver": {
+        "email": "test@gmail.com",
+        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
+        "name": "test",
+        "id": 9
+      },
+      "message": "I love you  ???",
+      "timestamp": 1682410312775,
       "id": 3
     },
     {
+      "conversationId": 1,
+      "sender": {
+        "email": "sumit@learnwithsumit.com",
+        "name": "sumit",
+        "id": 6
+      },
+      "receiver": {
+        "email": "test@gmail.com",
+        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
+        "name": "test",
+        "id": 9
+      },
+      "message": "do you love  me",
+      "timestamp": 1682410326586,
       "id": 4
     },
     {
@@ -138,249 +147,9 @@
         "name": "naznin",
         "id": 7
       },
-      "message": "hello there??",
-      "timestamp": 1682008586369,
+      "message": "hello there",
+      "timestamp": 1682410413278,
       "id": 5
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello my friend ",
-      "timestamp": 1682008600449,
-      "id": 6
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello dude",
-      "timestamp": 1682009335624,
-      "id": 7
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello",
-      "timestamp": 1682009355376,
-      "id": 8
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello there",
-      "timestamp": 1682010875952,
-      "id": 9
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello handsome",
-      "timestamp": 1682010902931,
-      "id": 10
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello mama",
-      "timestamp": 1682011008612,
-      "id": 11
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "sexy....",
-      "timestamp": 1682011058505,
-      "id": 12
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "goooo",
-      "timestamp": 1682011112219,
-      "id": 13
-    },
-    {
-      "conversationId": 1,
-      "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello there",
-      "timestamp": 1682011209754,
-      "id": 14
-    },
-    {
-      "conversationId": 2,
-      "sender": {
-        "email": "naznin@gmail.com",
-        "name": "naznin",
-        "id": 7
-      },
-      "receiver": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "sumit",
-        "id": 6
-      },
-      "message": "hello",
-      "timestamp": 1682011280826,
-      "id": 15
-    },
-    {
-      "conversationId": 3,
-      "sender": {
-        "email": "naznin@gmail.com",
-        "name": "naznin",
-        "id": 7
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello",
-      "timestamp": 1682011488116,
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "conversationId": 3,
-      "sender": {
-        "email": "naznin@gmail.com",
-        "name": "naznin",
-        "id": 7
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello gullu",
-      "timestamp": 1682011544433,
-      "id": 18
-    },
-    {
-      "conversationId": 3,
-      "sender": {
-        "email": "naznin@gmail.com",
-        "name": "naznin",
-        "id": 7
-      },
-      "receiver": {
-        "email": "test@gmail.com",
-        "password": "$2a$10$nNrDj.pp/vAac6P962iubuXmDcuxX98FJowgrILEf6aSfNUrP18Va",
-        "name": "test",
-        "id": 9
-      },
-      "message": "hello hooo",
-      "timestamp": 1682011879684,
-      "id": 19
-    },
-    {
-      "conversationId": 2,
-      "sender": {
-        "email": "naznin@gmail.com",
-        "name": "naznin",
-        "id": 7
-      },
-      "receiver": {
-        "email": "sumit@learnwithsumit.com",
-        "password": "$2a$10$s17vJFWPX/wArcaZRZoCm.bQjNAHUj68JjrVk/cvLSbLtqJ7DVy7a",
-        "name": "sumit",
-        "id": 6
-      },
-      "message": "hello  brother",
-      "timestamp": 1682011958857,
-      "id": 20
     }
   ]
 }

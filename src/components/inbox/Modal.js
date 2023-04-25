@@ -24,7 +24,7 @@ export default function Modal({ open, control }) {
     const dispatch = useDispatch()
     const [conversation, setConversation] = useState(undefined)
     const [editConversation, { isSuccess: isEditConversationSuccess }] = useEditConversationMutation()
-    const [addConversation, { isSuccess: isAddConversationSuccess }] = useAddConversationMutation()
+    const [addConversation, { data: addConversationData, isSuccess: isAddConversationSuccess }] = useAddConversationMutation()
     //    const[addMessage,{isSuccess:isAddMessageSuccess}] =useAddMessageMutation()
 
 
@@ -55,6 +55,7 @@ export default function Modal({ open, control }) {
     useEffect(() => {
 
         if (isEditConversationSuccess || isAddConversationSuccess) {
+            console.log('addConversation data', addConversationData)
             control()
 
 
@@ -106,6 +107,7 @@ export default function Modal({ open, control }) {
 
 
         if (conversation?.length > 0) {
+
 
             editConversation({
                 id: conversation[0]?.id,

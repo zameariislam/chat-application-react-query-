@@ -27,26 +27,33 @@ export const conversationsApi = apiSlice.injectEndpoints({
             }),
 
             async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+
+
+                const patchResult2 = dispatch(apiSlice.util.updateQueryData('getConversations',
+                    arg.sender, (draft) => {
+                        console.log('draft11', draft)
+                        draft.push(arg.data)
+
+
+                    }))
+
                 try {
 
                     const { data } = await queryFulfilled
-                    console.log('data', data)
-                    console.log('arg', arg)
+                    // console.log('data', data)
+                    // console.log('arg', arg)
 
                     if (data?.id) {
                         // silent entry to the message table 
 
                         const { data } = await queryFulfilled
-                        // console.log('data', data)
+                        console.log('dataF', data)
                         // console.log('argg', arg)
                         if (data?.id) {
                             // silent entry to the message table 
                             const { timestamp, message, users } = data
                             const sender = users.find(user => user.email === arg.sender)
                             const receiver = users.find(user => user.email !== arg.sender)
-
-
-
                             dispatch(messagesApi.endpoints.addMessage.initiate({
 
                                 conversationId: data?.id,
@@ -56,19 +63,7 @@ export const conversationsApi = apiSlice.injectEndpoints({
                                 timestamp
                             }))
 
-
-
-
                         }
-
-
-                        dispatch(messagesApi.endpoints.addMessage.initiate({
-
-
-                        },))
-
-
-
 
                     }
 
@@ -78,6 +73,7 @@ export const conversationsApi = apiSlice.injectEndpoints({
                 }
                 catch (err) {
                     console.log(err.message)
+                    patchResult2.undo()
 
                 }
 
@@ -129,17 +125,24 @@ export const conversationsApi = apiSlice.injectEndpoints({
 
 
 
-                        dispatch(messagesApi.endpoints.addMessage.initiate({
+                        const res = await dispatch(messagesApi.endpoints.addMessage.initiate({
 
                             conversationId: data?.id,
                             sender,
                             receiver,
                             message,
                             timestamp
-                        }))
+                        })).unwrap()
 
+                        console.log('res', res)
 
+                        dispatch(apiSlice.util.updateQueryData('getMessages', res.conversationId.toString(),
+                            (draft) => {
+                                draft.push(res)
 
+                            }))
+
+                        // update messages cache pessimistically  start 
 
                     }
 
