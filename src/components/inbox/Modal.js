@@ -55,7 +55,7 @@ export default function Modal({ open, control }) {
     useEffect(() => {
 
         if (isEditConversationSuccess || isAddConversationSuccess) {
-            console.log('addConversation data', addConversationData)
+           
             control()
 
 

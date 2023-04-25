@@ -1,3 +1,4 @@
+import { io } from "socket.io-client";
 import { apiSlice } from "../api/apiSlice";
 import { messagesApi } from "../messages/messagesApi";
 
@@ -16,6 +17,49 @@ export const conversationsApi = apiSlice.injectEndpoints({
         getConversation: builder.query({
             query: ({ userEmail, participantEmail }) =>
                 `/conversations?participants_like=${userEmail}-${participantEmail}&&participants_like=${participantEmail}-${userEmail}`,
+
+            async onCacheEntryAdded(
+                arg,
+                { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
+            ) {
+                // create socket
+                const socket = io("http://localhost:9000", {
+                    reconnectionDelay: 1000,
+                    reconnection: true,
+                    reconnectionAttemps: 10,
+                    transports: ["websocket"],
+                    agent: false,
+                    upgrade: false,
+                    rejectUnauthorized: false,
+                });
+
+                try {
+                    await cacheDataLoaded;
+                    socket.on("conversation", (data) => {
+                        updateCachedData((draft) => {
+
+                            console.log('dfina', draft)
+                            const conversation = draft.find(
+                                (c) => c.id == data?.data?.id
+                            );
+
+                            if (conversation?.id) {
+                                console.log('I am at conversation')
+                                console.log('conversation', conversation)
+                                conversation.message = data?.data?.message;
+                                conversation.timestamp = data?.data?.timestamp;
+                            } else {
+                                draft.push(data?.data)
+                            }
+                        });
+                    });
+                } catch (err) { }
+
+                await cacheEntryRemoved;
+                socket.close();
+            },
+
+
         }),
 
         addConversation: builder.mutation({
@@ -31,7 +75,7 @@ export const conversationsApi = apiSlice.injectEndpoints({
 
                 const patchResult2 = dispatch(apiSlice.util.updateQueryData('getConversations',
                     arg.sender, (draft) => {
-                        console.log('draft11', draft)
+                        // console.log('draft11', draft)
                         draft.push(arg.data)
 
 
@@ -134,7 +178,7 @@ export const conversationsApi = apiSlice.injectEndpoints({
                             timestamp
                         })).unwrap()
 
-                        console.log('res', res)
+
 
                         dispatch(apiSlice.util.updateQueryData('getMessages', res.conversationId.toString(),
                             (draft) => {
